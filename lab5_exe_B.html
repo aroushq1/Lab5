@@ -8,6 +8,29 @@ scale =1.0" >
 </head >
 <body >
 <!-- JavaScript will be linked here -->
+
+    <script >
+        let firstName = "Fatima"
+        let lastName = "Asif"
+        let age = "20"
+
+        let fullname = firstName + " " + lastName;
+        console.log(fullname);
+
+        let currentYear = new Date().getFullYear();
+        let birthYear = currentYear - age;
+        console.log(birthYear);
+
+        console.log(fullName.length);
+        console.log(fullName.toUpperCase());
+
+        console.log('Hello, my name is ${fullName} and I am ${age} years old. I was born in ${birthYear}.');
+
+        let canVote = age > 18 ? true : false;
+        console.log('I am eligible to vote: ${canVote}');
+
+    // JavaScript code will go here
+    </script >
 </body >
 </html >
 
