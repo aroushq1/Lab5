@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Selection Testing</title>
+</head>
+<body>
+    <div id="uniqueId">Element with Unique ID</div>
+    <div class="commonClass">First Element with Common Class</div>
+    <div class="commonClass specialClass">Second Element with Common Class and Special Class</div>
+    <p>First Paragraph</p>
+    <p>Second Paragraph</p>
+    <input type="text" name="inputName" value="First Input by Name">
+    <input type="text" name="inputName" value="Second Input by Name">
+    <button onclick="testDOMMethods()">Test DOM Methods</button>
+    <p id="msg" style="color:red; visibility: hidden;">Please check the Console to see extracted elements.</p>
+    <script>
+        function testDOMMethods() {
+            console.log('getElementById:', document.getElementById('uniqueId'));
+            console.log('getElementsByClassName (commonClass):', document.getElementsByClassName('commonClass'));
+            console.log('getElementsByClassName (specialClass):', document.getElementsByClassName('specialClass'));
+            console.log('getElementsByTagName (p):', document.getElementsByTagName('p'));
+            console.log('querySelector (commonClass):', document.querySelector('.commonClass'));
+            console.log('querySelectorAll (commonClass):', document.querySelectorAll('.commonClass'));
+            console.log('getElementsByName (inputName):', document.getElementsByName('inputName'));
+			document.getElementById('msg').style.visibility = 'visible';
+        }
+    </script>
+</body>
+</html>
