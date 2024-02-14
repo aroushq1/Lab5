@@ -103,6 +103,7 @@ Description : DOM Elements.
 				</li>
 				<li><a href="#">About</a></li>
 				<li><a href="#">Contact</a></li>
+				<li><a href="#">Blog</a></li>
 			</ul>
 		</nav>
 		<div class="container">
@@ -110,7 +111,7 @@ Description : DOM Elements.
 				<h2>About Us</h2>
 				<p>This is a paragraph about our company.</p>
 				
-				<img src="./images/logo.svg" alt="Company logo" width="100px" />
+				<img src="/images/example.svg" alt="Company logo" width="100px" />
                 
 				<h3>Our Journey</h3>
 				<p>
@@ -167,13 +168,15 @@ Description : DOM Elements.
 				<h2>Contact Us</h2>
 				<form>
 					<label for="name">Name:</label>
-					<input type="text" id="name" name="name"/><br />
+					<input type="Name" id="name" name="name"/><br/>
 					<label for="email">Email:</label>
 					<input type="email" id="email" name="email" /><br />
 					<label for="message">Message:</label>
 					<textarea id="message" name="message"></textarea><br />
 					<input type="button" value="Submit" />
 				</form>
+
+				
 			</section>
 			<article>
 				<h2 class="hidden"><hidden>What is full-stack?</hidden></h2>
@@ -200,12 +203,12 @@ Description : DOM Elements.
             <aside>
                 <h3>Related Links</h3>
                 <ul>
-                    <li><a href="#">W3School</a></li>
-                    <li><a href="#">AWS</a></li>
+                    <li><a href="#" style="color: green;" >W3School</a></li>
+                    <li><a href="#" style="color: green;">AWS</a></li>
                 </ul>
             </aside>
 		</div>
-		<footer>
+		<footer style="border: 2px solid red;">
 			<p>Copyright © 2024</p>
 		</footer>
 		<script>
@@ -220,28 +223,31 @@ Description : DOM Elements.
 					aboutUsSection.appendChild(newP);
 				}
 
-				function placeHolder(){}
+				document.querySelectorAll('label').forEach(label => {
+					let inputIdNo = label.getAttribute('for');
+					if (inputIdNo){
+						let inputElem = document.getElementById(inputIdNo)
+						if(inputElem){
+							let placeholder = inputIdNo.charAt(0).toUpperCase() + inputIdNo.slice(1);
+							inputElem.setAttribute('placeholder', placeholder);
+						}
+					}
+				});
+
+				function changeButton() {
+					var subButton = document.querySelector('input[type="button"]');
+					if (subButton) {
+						subButton.value = 'Submitted';
+						subButton.disabled = true;
+					}
+    			}
+
+				document.querySelector('input[type="button"]').addEventListener('click', changeButton);
+
+
 	
 				appendNewParagraph();   //function call
-				placeHolder();
 
-\
-				// Task 5: Add placeholders to input elements based on their corresponding label IDs
-
-
-				// Task 6: Set the src attribute of the image
-
-
-				// Task 7: Add a new item in the navigation menu
-
-
-				// Task 8: Change the submit button text upon clicking and make it disabled
-
-
-				// Task 9: Change the text color of each item in the 'Related Links' to green
-
-
-				// Task 10: Add a red solid border to the footer
 			});
 		</script>
 	</body>
